@@ -1,9 +1,8 @@
 #!/bin/bash
-mypath=/home/sniper/Desktop/domain
 
-echo "enter domain"
-read varname
+echo "enter path to subdomain list"
+read pathname
 
-for url in $(cat $mypath/$varname/subdomains.txt);do
+	for url in $(cat $pathname);do
 	host $url | grep SERVFAIL
 done
